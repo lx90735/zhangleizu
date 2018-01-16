@@ -1,0 +1,302 @@
+﻿2018-01-12 11:27:10> Program: Starting Squirrel Updater: --install .
+2018-01-12 11:27:11> Program: Starting install, writing to C:\Users\Administrator\AppData\Local\SquirrelTemp
+2018-01-12 11:27:11> Program: About to install to: C:\Users\Administrator\AppData\Local\GitHubDesktop
+2018-01-12 11:27:11> CheckForUpdateImpl: Couldn't write out staging user ID, this user probably shouldn't get beta anything: System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\Administrator\AppData\Local\GitHubDesktop\packages\.betaId”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   在 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding, Boolean checkHost)
+   在 System.IO.File.WriteAllText(String path, String contents, Encoding encoding)
+   在 Squirrel.UpdateManager.CheckForUpdateImpl.getOrCreateStagedUserId()
+2018-01-12 11:27:11> CheckForUpdateImpl: Failed to load local releases, starting from scratch: System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\Administrator\AppData\Local\GitHubDesktop\packages\RELEASES”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Squirrel.Utility.LoadLocalReleases(String localReleaseFile)
+   在 Squirrel.UpdateManager.CheckForUpdateImpl.<CheckForUpdate>d__2.MoveNext()
+2018-01-12 11:27:11> CheckForUpdateImpl: Reading RELEASES file from C:\Users\Administrator\AppData\Local\SquirrelTemp
+2018-01-12 11:27:12> CheckForUpdateImpl: First run or local directory is corrupt, starting from scratch
+2018-01-12 11:27:12> ApplyReleasesImpl: Writing files to app directory: C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8
+2018-01-12 11:27:13> LogHost: Rigging execution stub for lib/net45/GitHubDesktop_ExecutionStub.exe to C:\Users\Administrator\AppData\Local\GitHubDesktop\GitHubDesktop.exe
+2018-01-12 11:27:39> ApplyReleasesImpl: Squirrel Enabled Apps: [C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8\GitHubDesktop.exe]
+2018-01-12 11:27:40> ApplyReleasesImpl: Couldn't run Squirrel hook, continuing: C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8\GitHubDesktop.exe: System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.Utility.<InvokeProcessAsync>d__11.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c__DisplayClass10_0.<<invokePostInstall>b__0>d.MoveNext()
+2018-01-12 11:27:40> IEnableLogger: Failed to invoke post-install: System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+2018-01-12 11:27:40> Unhandled exception: System.AggregateException: 发生一个或多个错误。 ---> System.ComponentModel.Win32Exception: 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<ApplyReleases>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.<FullInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.Update.Program.<Install>d__4.MoveNext()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.Wait()
+   在 Squirrel.Update.Program.executeCommandLine(String[] args)
+   在 Squirrel.Update.Program.main(String[] args)
+---> (内部异常 #0) System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<ApplyReleases>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.<FullInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.Update.Program.<Install>d__4.MoveNext()<---
+
+2018-01-12 12:47:44> Program: Starting Squirrel Updater: --install .
+2018-01-12 12:47:44> Program: Starting install, writing to C:\Users\Administrator\AppData\Local\SquirrelTemp
+2018-01-12 12:47:44> Program: About to install to: C:\Users\Administrator\AppData\Local\GitHubDesktop
+2018-01-12 12:47:44> Program: Install path C:\Users\Administrator\AppData\Local\GitHubDesktop already exists, burning it to the ground
+2018-01-12 12:47:46> CheckForUpdateImpl: Couldn't write out staging user ID, this user probably shouldn't get beta anything: System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\Administrator\AppData\Local\GitHubDesktop\packages\.betaId”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   在 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding, Boolean checkHost)
+   在 System.IO.File.WriteAllText(String path, String contents, Encoding encoding)
+   在 Squirrel.UpdateManager.CheckForUpdateImpl.getOrCreateStagedUserId()
+2018-01-12 12:47:46> CheckForUpdateImpl: Failed to load local releases, starting from scratch: System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\Administrator\AppData\Local\GitHubDesktop\packages\RELEASES”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Squirrel.Utility.LoadLocalReleases(String localReleaseFile)
+   在 Squirrel.UpdateManager.CheckForUpdateImpl.<CheckForUpdate>d__2.MoveNext()
+2018-01-12 12:47:46> CheckForUpdateImpl: Reading RELEASES file from C:\Users\Administrator\AppData\Local\SquirrelTemp
+2018-01-12 12:47:46> CheckForUpdateImpl: First run or local directory is corrupt, starting from scratch
+2018-01-12 12:47:46> ApplyReleasesImpl: Writing files to app directory: C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8
+2018-01-12 12:47:52> LogHost: Rigging execution stub for lib/net45/GitHubDesktop_ExecutionStub.exe to C:\Users\Administrator\AppData\Local\GitHubDesktop\GitHubDesktop.exe
+2018-01-12 12:48:06> ApplyReleasesImpl: Squirrel Enabled Apps: [C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8\GitHubDesktop.exe]
+2018-01-12 12:48:06> ApplyReleasesImpl: Couldn't run Squirrel hook, continuing: C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8\GitHubDesktop.exe: System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.Utility.<InvokeProcessAsync>d__11.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c__DisplayClass10_0.<<invokePostInstall>b__0>d.MoveNext()
+2018-01-12 12:48:06> IEnableLogger: Failed to invoke post-install: System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+2018-01-12 12:48:07> Unhandled exception: System.AggregateException: 发生一个或多个错误。 ---> System.ComponentModel.Win32Exception: 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<ApplyReleases>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.<FullInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.Update.Program.<Install>d__4.MoveNext()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.Wait()
+   在 Squirrel.Update.Program.executeCommandLine(String[] args)
+   在 Squirrel.Update.Program.main(String[] args)
+---> (内部异常 #0) System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<ApplyReleases>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.<FullInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.Update.Program.<Install>d__4.MoveNext()<---
+
+2018-01-12 12:48:34> Program: Starting Squirrel Updater: --install .
+2018-01-12 12:48:34> Program: Starting install, writing to C:\Users\Administrator\AppData\Local\SquirrelTemp
+2018-01-12 12:48:34> Program: About to install to: C:\Users\Administrator\AppData\Local\GitHubDesktop
+2018-01-12 12:48:34> Program: Install path C:\Users\Administrator\AppData\Local\GitHubDesktop already exists, burning it to the ground
+2018-01-12 12:48:36> CheckForUpdateImpl: Couldn't write out staging user ID, this user probably shouldn't get beta anything: System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\Administrator\AppData\Local\GitHubDesktop\packages\.betaId”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share, Int32 bufferSize, FileOptions options, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.StreamWriter.CreateFile(String path, Boolean append, Boolean checkHost)
+   在 System.IO.StreamWriter..ctor(String path, Boolean append, Encoding encoding, Int32 bufferSize, Boolean checkHost)
+   在 System.IO.File.InternalWriteAllText(String path, String contents, Encoding encoding, Boolean checkHost)
+   在 System.IO.File.WriteAllText(String path, String contents, Encoding encoding)
+   在 Squirrel.UpdateManager.CheckForUpdateImpl.getOrCreateStagedUserId()
+2018-01-12 12:48:36> CheckForUpdateImpl: Failed to load local releases, starting from scratch: System.IO.DirectoryNotFoundException: 未能找到路径“C:\Users\Administrator\AppData\Local\GitHubDesktop\packages\RELEASES”的一部分。
+   在 System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   在 System.IO.FileStream.Init(String path, FileMode mode, FileAccess access, Int32 rights, Boolean useRights, FileShare share, Int32 bufferSize, FileOptions options, SECURITY_ATTRIBUTES secAttrs, String msgPath, Boolean bFromProxy, Boolean useLongPath, Boolean checkHost)
+   在 System.IO.FileStream..ctor(String path, FileMode mode, FileAccess access, FileShare share)
+   在 Squirrel.Utility.LoadLocalReleases(String localReleaseFile)
+   在 Squirrel.UpdateManager.CheckForUpdateImpl.<CheckForUpdate>d__2.MoveNext()
+2018-01-12 12:48:36> CheckForUpdateImpl: Reading RELEASES file from C:\Users\Administrator\AppData\Local\SquirrelTemp
+2018-01-12 12:48:36> CheckForUpdateImpl: First run or local directory is corrupt, starting from scratch
+2018-01-12 12:48:36> ApplyReleasesImpl: Writing files to app directory: C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8
+2018-01-12 12:48:36> LogHost: Rigging execution stub for lib/net45/GitHubDesktop_ExecutionStub.exe to C:\Users\Administrator\AppData\Local\GitHubDesktop\GitHubDesktop.exe
+2018-01-12 12:49:12> ApplyReleasesImpl: Squirrel Enabled Apps: [C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8\GitHubDesktop.exe]
+2018-01-12 12:49:12> ApplyReleasesImpl: Couldn't run Squirrel hook, continuing: C:\Users\Administrator\AppData\Local\GitHubDesktop\app-1.0.8\GitHubDesktop.exe: System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithCreateProcess(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.Utility.<InvokeProcessAsync>d__11.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c__DisplayClass10_0.<<invokePostInstall>b__0>d.MoveNext()
+2018-01-12 12:49:12> IEnableLogger: Failed to invoke post-install: System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+2018-01-12 12:49:12> Unhandled exception: System.AggregateException: 发生一个或多个错误。 ---> System.ComponentModel.Win32Exception: 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<ApplyReleases>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.<FullInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.Update.Program.<Install>d__4.MoveNext()
+   --- 内部异常堆栈跟踪的结尾 ---
+   在 System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   在 System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   在 System.Threading.Tasks.Task.Wait()
+   在 Squirrel.Update.Program.executeCommandLine(String[] args)
+   在 Squirrel.Update.Program.main(String[] args)
+---> (内部异常 #0) System.ComponentModel.Win32Exception (0x80004005): 指定的可执行文件不是此操作系统平台的有效应用程序。
+   在 System.Diagnostics.Process.StartWithShellExecuteEx(ProcessStartInfo startInfo)
+   在 System.Diagnostics.Process.Start()
+   在 System.Diagnostics.Process.Start(ProcessStartInfo startInfo)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<>c.<invokePostInstall>b__10_6(ProcessStartInfo info)
+   在 Squirrel.EnumerableExtensions.ForEach[TSource](IEnumerable`1 source, Action`1 onNext)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<invokePostInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.Utility.<LogIfThrows>d__37.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.UpdateManager.ApplyReleasesImpl.<ApplyReleases>d__2.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 Squirrel.UpdateManager.<FullInstall>d__10.MoveNext()
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   在 System.Runtime.CompilerServices.TaskAwaiter.ValidateEnd(Task task)
+   在 Squirrel.Update.Program.<Install>d__4.MoveNext()<---
+
